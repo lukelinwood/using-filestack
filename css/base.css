@@ -1,0 +1,554 @@
+/* ------------------------------------------------------------ *\
+|* CSS Reset
+\* ------------------------------------------------------------ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+body {
+    line-height: 1
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+    font-weight: normal;
+}
+ol,
+ul {
+    list-style: none
+}
+blockquote {
+    quotes: none
+}
+blockquote:before,
+blockquote:after {
+    content: '';
+    content: none;
+}
+del {
+    text-decoration: line-through
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a img {
+    border: none
+}
+/* ------------------------------------------------------------ *\
+|* Globals
+\* ------------------------------------------------------------ */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+  background: url('../img/bg_blur.jpg') no-repeat center center fixed;
+  background-size: 100% 100%;
+}
+body {
+    /*background-color: #145a46;*/
+    color: #505050;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.8;
+}
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1;
+    font-weight: 400;
+}
+a {
+    text-decoration: none;
+}
+/* ------------------------------------------------------------ *\
+|* Template
+\* ------------------------------------------------------------ */
+#full-width-layout {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(29,34,44,1);
+    border: 1px solid black;
+}
+#boxed-layout {
+    width: 75%;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(29,34,44,1);
+    box-shadow: 0px 0px 5px 3px #333;
+    border: 1px solid black;
+}
+#main {
+    background-color: #fff;
+    height: 100px;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------ *\
+|* Inputs CSS
+\* ------------------------------------------------------------ */
+form .profile {
+    width: 100%;
+    height: 150px;
+}
+
+form .profile img {
+    width: 150px;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 8px 10px;
+    background: rgb(17,20,26);
+    color: #aaa;
+    font-size: 13px;
+    border: 1px solid #333;
+    margin: 7px 0;
+}
+
+form input[type="checkbox"] {
+    display: none;
+}
+
+form input[type="checkbox"] + label {
+    color: #aaa;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+form input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -1px 9px 0 0;
+    vertical-align: middle;
+    background: url('../img/check_radio_sheet.png') left top no-repeat;
+    cursor: pointer;
+}
+
+form input[type="checkbox"]:checked + label span {
+    background: url('../img/check_radio_sheet.png') -19px top no-repeat;
+}
+
+form input[type="radio"] {
+    display: none;
+}
+
+form input[type="radio"] + label {
+    color: #aaa;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+form input[type="radio"] + label span {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -1px 9px 0 0;
+    vertical-align: middle;
+    background: url('../img/check_radio_sheet.png') -38px top no-repeat;
+    cursor: pointer;
+}
+
+form input[type="radio"]:checked + label span {
+    background:url('../img/check_radio_sheet.png') -57px top no-repeat;
+}
+
+form .button {
+    width: 100%;
+    padding: 10px 0;
+    margin: 20px 0;
+    background: rgba(226, 87, 20, 1);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 500;
+}
+form .button:hover {
+    background: rgba(226, 87, 20, 0.7);
+    cursor: pointer;
+}
+/* ------------------------------------------------------------ *\
+|* Tooltip CSS
+\* ------------------------------------------------------------ */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 196px;
+    height: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 11px;
+    position: absolute;
+    z-index: 1;
+    left: 100%;
+    top: -100%;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 1s
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    left: 0%;
+    top: 29%;
+    margin-left: -10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/* ------------------------------------------------------------ *\
+|* Info Bar
+\* ------------------------------------------------------------ */
+#info-bar {
+    background-color: rgba(200,200,200,0.2);
+}
+#info-bar a {
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+}
+#info-bar a:hover {
+    background-color: rgba(200,200,200,0.2);
+    cursor: pointer;
+}
+
+span.float-left,
+span.float-right {
+    display: block;
+    width: 50%;
+    font-size: 16px;
+}
+span.float-left {
+    float: left;
+    text-align: left;
+}
+span.float-right {
+    float: right;
+    text-align: right;
+}
+/* ------------------------------------------------------------ *\
+|* Header
+\* ------------------------------------------------------------ */
+header {
+    padding: 10px 0
+}
+#title {
+    text-align: center;
+    /*width: 400px;
+    margin: 90px auto;*/
+}
+#title a img {
+    height: 50px;
+}
+#title h1 {
+    color: tomato;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#title h2 {
+    color: #fff;
+    font-size: 12px;
+}
+#title p {
+    font-weight: 200;
+    font-size: 15px;
+    color: burlywood;
+}
+#title span {
+    font-weight: bold;
+}
+#title p,
+#title h1,
+#title h2 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+/* ------------------------------------------------------------ *\
+|* Footer
+\* ------------------------------------------------------------ */
+footer {
+    background-color: #322f30;
+    padding: 10px 30px;
+    width: 100%;
+    /*position: absolute;*/
+    bottom: 0;
+    left: 0;
+}
+footer span {
+    color: #fff
+}
+footer span p {
+    font-weight: 200;
+    font-size: 20px;
+}
+/* ------------------------------------------------------------ *\
+|* Copyright
+\* ------------------------------------------------------------ */
+.copyright {
+    margin-top: 10px;
+    color: #fff;
+}
+.copyright p {
+    font-size: 16px;
+}
+.copyright a {
+    color: burlywood;
+    text-decoration: none;
+}
+.copyright a:hover {
+    color: tomato;
+}
+/* ------------------------------------------------------------ *\
+|* Social Media Icons
+\* ------------------------------------------------------------ */
+.social-icon {
+    color: #fff;
+}
+ul.social-icons {
+    margin-top: 10px;
+}
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+}
+.social-icons p {
+    font-size: 16px;
+}
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+.fa-facebook {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-facebook:hover {
+    background-color: #3d5b99;
+}
+.fa-twitter {
+    padding:10px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-twitter:hover {
+    background-color: #00aced;
+}
+.fa-instagram {
+    padding:10px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-instagram:hover {
+    background-color: #e95950;
+}
+.fa-rss {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-rss:hover {
+    background-color: #efeae0;
+}
+.fa-youtube {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-youtube:hover {
+    background-color: #e64a41;
+}
+.fa-linkedin {
+    padding:10px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-linkedin:hover {
+    background-color: #0073a4;
+}
+.fa-google-plus {
+    padding:10px 9px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-google-plus:hover {
+    background-color: #e25714;
+}
+
+/* ------------------------------------------------------------ *\
+|* Extras
+\* ------------------------------------------------------------ */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+/* ------------------------------------------------------------ *\
+|* Media Queries
+\* ------------------------------------------------------------ */
+@media all and (max-width: 768px) { 
+    /* Boxed Layout not compatible with Mobile */
+    #boxed-layout {
+        width: 75%;
+        border-radius: 0;
+    }
+    #info-bar a {
+        display: block;
+        font-size: 12px;
+    }    
+    span.float-left,
+    span.float-right {
+        font-size: 12px;
+    }
+    .social-icons p {
+        font-size: 12px;
+    }
+    .copyright p {
+        font-size: 12px;
+    }
+    #title h1 {
+        font-size: 20px
+    }
+    #title h2 {
+        font-size: 12px
+    }
+}
